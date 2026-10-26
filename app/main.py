@@ -26,17 +26,6 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Allow requests from the React/Vite frontend.
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Register API routers.
 app.include_router(users_router)
@@ -55,3 +44,15 @@ def home():
 def health_check():
     """Check whether the API is healthy."""
     return {"status": "healthy"}
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://taskflow-frontend-8qh5.onrender.com",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
