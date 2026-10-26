@@ -1,0 +1,42 @@
+
+# Python
+__pycache__/
+*.py[cod]
+task_env/
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# SQLite database
+*.db
+*.sqlite
+*.sqlite3
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Editors
+.vscode/
+.idea/
+
+# Operating system
+.DS_Store
+
+# Deployment safety
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+frontend/node_modules/
+frontend/dist/
